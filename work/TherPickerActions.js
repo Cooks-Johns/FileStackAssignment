@@ -2,22 +2,14 @@
 'use strict';
 
 
-
-const client = filestack.init('ASkdROusXR2KK14hNk11Kz');
-
-
-
-
-var imageHandle = '';
-
-function openPhotoPicker() {
-    console.log("open Photo Picker");
-    client.pick({
-        maxFiles: 5,
-    }).then(function(result) {
-        console.log(JSON.stringify(result));
-        imageHandle = result.filesUploaded[0].handle;
-        console.log(imageHandle);
-    })
-
-}
+window.addEventListener('DOMContentLoaded', function () {
+    const apikey = 'ASkdROusXR2KK14hNk11Kz';
+    const client = filestack.init(apikey);
+    const options = {
+        maxFiles: 20,
+        uploadInBackground: false,
+        onOpen: () => console.log('opened!'),
+        onUploadDone: (res) => console.log(res),
+    };
+    client.picker(options).open();
+});
