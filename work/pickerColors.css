@@ -16,6 +16,15 @@ h1 {
     text-align: center;
 }
 
+#inlineDisplay {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+}
+
+
+
+
 /* change picker appearance  */
 .fsp-picker {
     background: rgba(0,0,0,.288)!important;
